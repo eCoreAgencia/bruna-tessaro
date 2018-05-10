@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+	<head>
+		<title>Bruna Tessaro</title>
+		<vtex:metaTags/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<vtex:template id="BT-commonStyles" />
+	</head>
+	<body>
+
+        <vtex:template id="BT-header" />
+
+        <main>
+        	<section class="banner-departament">
+        		<div class="container">
+        			<vtex:contentPlaceHolder id="banner-departamento" />
+        		</div>
+        	</section>
+        	
+      		<section class="mainShelf">
+      			<div class="container">
+      				<div class="col-xs-12 col-md-9 sidebar">
+		            	<vtex.cmc:searchNavigator />
+	          		</div>
+	          		<div class="col-xs-12 col-md-3 order"></div>
+	          		<div class="col-xs-12 produtos-shelf">
+	          			<vtex.cmc:searchResult layout="86bd82d4-6f3e-46d9-b2e1-f790e4f3c2a1" itemCount="12" columnCount="12" />
+	          		</div>
+      			</div>
+	        </section>
+
+	        <!-- <section class="about-department">
+	        	<div class="container">
+	        		<article><vtex:contentPlaceHolder id="texto-departamento" /></article>
+	        	</div>
+	        </section> -->
+        </main>
+
+        <vtex:template id="BT-footer" />
+
+		<vtex:template id="BT-commonScripts" />
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.orderBy').first().appendTo('.order');
+			});
+		</script>
+
+	</body>
+</html>

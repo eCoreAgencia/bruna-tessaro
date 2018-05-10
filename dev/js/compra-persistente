@@ -1,0 +1,9 @@
+		$(window).scroll(function() {
+			var scroll = $(window).scrollTop();
+
+			if (scroll >= 200) {
+				$('.product-details-persistente').fadeIn(200);
+			} else {
+				$('.product-details-persistente').fadeOut(600);
+			}
+		});
