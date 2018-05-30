@@ -628,7 +628,7 @@ body.account .address-display-block {
    ========================================================================== */
 
 header .header-mob {
-	background-color: #e8e4e1;
+	background-color: #F69C7D;
 	overflow: visible;
 	height: 58px;
 	padding-top: 12px;
@@ -726,7 +726,7 @@ header .header-mob .searchform-mob fieldset .btn-buscar {
 header .top-box {
 	height: 28px;
 	overflow: hidden;
-	background-color: #e8e4e1;
+	background-color: #F69C7D;
 	padding: 8px 0;
 }
 
@@ -746,6 +746,7 @@ header .top-box .welcome-msg .ajax-content-loader p em a {
 
 header .top-box .info-loja {
 	text-align: right;
+	font-weight: bold;
 }
 
 header .top-box .info-loja ul li {
@@ -776,6 +777,7 @@ header .middle-box {
 	clear: both;
 	height: 78px;
 	overflow: visible;
+	background: #F69C7D;
 }
 
 header .middle-box .logo {
@@ -798,16 +800,17 @@ header .middle-box .searchform fieldset select {
 
 header .middle-box .searchform fieldset input.fulltext-search-box {
 	font-size: 11px;
-	border: 1px solid #9e9ea6;
+	border: 1px solid #000;
 	font-style: italic;
 	height: 40px;
 	padding: 8px 20px;
-	color: #424242;
+	color: #000;
 	width: 100%;
+	background: #F69C7D;
 }
 
 header .middle-box .searchform fieldset input.btn-buscar {
-	background: url(/arquivos/lupa-search.png) no-repeat;
+	background: url(/arquivos/lupa-search-black1.png) no-repeat;
 	width: 24px;
 	height: 24px;
 	position: absolute;
@@ -825,6 +828,7 @@ header .middle-box .account-cart {
 header .middle-box .account-cart .account-itens {
 	display: inline-block;
 	vertical-align: middle;
+	font-weight: bold;
 }
 
 header .middle-box .account-cart .account-itens ul li {
@@ -1864,9 +1868,9 @@ header.menu-persistente .top-box {
 	position: absolute;
 	font-style: normal;
 	text-align: center;
-	width: 37px;
+	width: 39px;
 	height: 55px;
-	background-color: #e8e4e1;
+	background-color: #F69C7D;
 	z-index: 99;
 }
 
@@ -2545,6 +2549,11 @@ body.busca-vazia .product-view .buy-box .buy-button:before {
 	margin-right: 10px;
 	content: "";
 	vertical-align: middle;
+}
+
+body.produto .buy-box-persistente .aviso,
+body.busca-vazia .buy-box-persistente .aviso {
+	display: none;
 }
 
 body.produto .buy-box-persistente .choose-skus .sku-selector-container ul li.specification,

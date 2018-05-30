@@ -462,6 +462,10 @@ body.busca-vazia{
             }
         }
 
+        .aviso{
+            display: none;
+        }
+
         .choose-skus {
             @include mq($screen-md) {
                 width: 30%;

@@ -6,7 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <vtex:template id="BT-commonStyles" />
-
+        <style>
+            div#valor-boleto {color: green;}
+            .buy-box-persistente .aviso{
+                display: none !important;
+            }
+        </style>
     </head>
     <body>
             
@@ -29,6 +34,11 @@
 
                     <section class="buy-box col-xs-12 col-md-5">
                         <vtex.cmc:productName />
+                        
+                        <!--Estrelas abaixo do nome Yourviews-->
+                        <div id="yv-review-quickreview"></div>
+                        <!-- fim -Estrelas abaixo do nome Yourviews-->
+                        
                         <div class="choose-skus">
                             <div class="formatura-anel">
                                 <h3>Cursos: </h3>
@@ -248,6 +258,13 @@
 
                         <vtex.cmc:BuyButton/>
                         <vtex.cmc:shippingValue/>
+                        <div class="aviso" style="display: block; margin-top: 10px; font-size: 12px; line-height: 16px;background-color: #fafafa; padding: 20px">
+                            <strong style="display: block">AVISO</strong>
+                            Informamos que devido às paralisações ocorridas nas estradas do país, 
+                            os pedidos realizados em nosso site com envio pelos Correios estão sendo 
+                            entregues com atraso. Tão logo se normalize essa situação, os prazos serão 
+                            novamente respeitados.
+                        </div>
                     </section><!-- buy-box END -->
                 </section><!-- product-view END -->
 
@@ -274,6 +291,18 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!--Review e QA Yourviews-->
+                    <div class="container">
+                    	<div class="yv-box">
+                    		<div id="yv-reviews"></div>
+                    	</div>
+                    	<div class="yv-box">
+                    		<div class="yv-qa"></div>
+                    	</div>
+                    </div>
+                    <!-- Fim - Review e QA Yourviews-->
+                    
                 </section>
             </div>
         </main>
@@ -329,8 +358,10 @@
         <script type="text/javascript" src="/arquivos/compra-persistente-v3.js"></script>
         <script type="text/javascript" src="/arquivos/slick.js"></script>
         <!-- <script type="text/javascript" src="/arquivos/desconto-boleto-v3.js"></script> -->
-        <script type="text/javascript" src="/arquivos/VideoApi.js"></script>
         <script src="/arquivos/percent-price-shelf-v17.js"></script>
+        <script type="text/javascript" src="/arquivos/VideoApi.js"></script>
+        
+        
 
         <script type="text/javascript">
             $(document).ready(function(){
@@ -355,8 +386,16 @@
                         $('body').removeClass('modal_active');
                     });
                 // Close Modal //
+                
+        //desconto 25% dia das mulheres    
+        $(".product-view .flag").each(function(){ 
+            if($(this).text().indexOf("25") !== -1){ 
+                var text = $(".mini-tipbar ul li span:first").text()
+                $(".mini-tipbar ul li span:first").text(text.replace("20%","25%"))
+            } 
+        });
             });
         </script>
-
+        <!--<script type="text/javascript" src="/arquivos/buy-box.js"></script>-->
     </body>
 </html>
