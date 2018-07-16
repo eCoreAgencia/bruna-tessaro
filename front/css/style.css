@@ -628,7 +628,7 @@ body.account .address-display-block {
    ========================================================================== */
 
 header .header-mob {
-	background-color: #F69C7D;
+	background-color: #e5e5e5;
 	overflow: visible;
 	height: 58px;
 	padding-top: 12px;
@@ -726,7 +726,7 @@ header .header-mob .searchform-mob fieldset .btn-buscar {
 header .top-box {
 	height: 28px;
 	overflow: hidden;
-	background-color: #F69C7D;
+	background-color: #e5e5e5;
 	padding: 8px 0;
 }
 
@@ -777,7 +777,7 @@ header .middle-box {
 	clear: both;
 	height: 78px;
 	overflow: visible;
-	background: #F69C7D;
+	background: #e5e5e5;
 }
 
 header .middle-box .logo {
@@ -806,7 +806,7 @@ header .middle-box .searchform fieldset input.fulltext-search-box {
 	padding: 8px 20px;
 	color: #000;
 	width: 100%;
-	background: #F69C7D;
+	background: #e5e5e5;
 }
 
 header .middle-box .searchform fieldset input.btn-buscar {
@@ -901,6 +901,7 @@ header .middle-box .account-cart .cart-itens:hover #minicart {
 header .menu {
 	text-align: center;
 	border-top: 1px solid #e0e0e0;
+	background-color: #000;
 }
 
 header .menu nav {
@@ -1053,13 +1054,13 @@ header .menu nav li.menu-item:after {
 
 header .menu nav li a.menu-anchor {
 	font-size: 12px;
-	color: #605f5f;
+	color: #fff;
 	text-transform: uppercase;
 	font-weight: 500;
 }
 
 header .menu nav li a.menu-anchor:hover {
-	color: #34508d;
+	color: #fff;
 }
 
 .ui-autocomplete .ui-menu-item:hover {
@@ -1209,13 +1210,12 @@ footer .footer-main .item.pagamento {
 
 footer .footer-main .item.seguranca nav ul li {
 	display: inline-block;
-	vertical-align: top;
-	width: 50%;
+	vertical-align: middle;
+	width: 33%;
 }
 
-footer .footer-main .item.seguranca nav ul li img {
-	width: 80%;
-	height: auto;
+footer .footer-main .item.seguranca nav ul li:nth-child(3) {
+	display: none;
 }
 
 footer .footer-main .footer-destaque {
@@ -1274,7 +1274,7 @@ footer .footer-main .footer-destaque .social ul {
 
 footer .footer-main .footer-destaque .social ul li {
 	display: inline-block;
-	margin: 0 10px;
+	margin: 0 5px;
 }
 
 footer .footer-main .footer-destaque .social ul li svg:hover {
@@ -2559,6 +2559,15 @@ body.busca-vazia .buy-box-persistente .aviso {
 body.produto .buy-box-persistente .choose-skus .sku-selector-container ul li.specification,
 body.busca-vazia .buy-box-persistente .choose-skus .sku-selector-container ul li.specification {
 	font-size: 14px;
+}
+
+body.produto .buy-box-persistente .yv-selo-prod,
+body.produto .buy-box-persistente #calculoFrete,
+body.produto .buy-box-persistente #yv-review-quickreview,
+body.busca-vazia .buy-box-persistente .yv-selo-prod,
+body.busca-vazia .buy-box-persistente #calculoFrete,
+body.busca-vazia .buy-box-persistente #yv-review-quickreview {
+	display: none !important;
 }
 
 body.produto .buy-box-persistente .price-info .descricao-preco em,
@@ -4013,6 +4022,80 @@ body.account .slider .address-display-block {
 	border: 2px solid #ccc;
 }
 
+/**
+ * EasyZoom core styles
+ */
+
+.easyzoom {
+	position: relative;
+	margin-left: 10px;
+	border: 1px solid #ccc; /* 'Shrink-wrap' the element */
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.easyzoom img {
+	vertical-align: bottom;
+	width: 100%;
+}
+
+.easyzoom.is-loading img {
+	cursor: progress;
+}
+
+.easyzoom.is-ready img {
+	cursor: crosshair;
+}
+
+.easyzoom.is-error img {
+	cursor: not-allowed;
+}
+
+.easyzoom-notice {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 150;
+	width: 10em;
+	margin: -1em 0 0 -5em;
+	line-height: 2em;
+	text-align: center;
+	background: #FFF;
+	box-shadow: 0 0 10px #888;
+}
+
+.easyzoom-flyout {
+	position: absolute;
+	z-index: 100;
+	overflow: hidden;
+	background: #FFF;
+}
+
+/**
+ * EasyZoom layout variations
+ */
+
+.easyzoom--overlay .easyzoom-flyout {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.easyzoom--adjacent .easyzoom-flyout {
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+	margin-left: 20px;
+}
+
+.thumbnails li {
+	display: inline-block;
+	margin-right: 5px;
+}
+
 /*
    Base Style
    ========================================================================== */
@@ -5206,6 +5289,18 @@ body.institucional .sidebar {
 
 body.institucional .content {
 	margin-top: 4%;
+}
+
+.easyzoom img {
+	width: auto;
+}
+
+.thumbnails li {
+	display: block;
+}
+
+.thumbnails {
+	float: left;
 }
 
 }

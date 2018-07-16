@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <vtex:template id="BT-commonStyles" />
-
+        <style>div#valor-boleto {color: green;}</style>
     </head>
     <body>
             
@@ -23,12 +23,22 @@
                   <div class="product-name-mob col-xs-12 hidden-md hidden-lg hidden-sm"  >
                     <vtex.cmc:productName />
                   </div>
-                    <section class="product-box col-xs-12 col-md-7">
-                        <vtex.cmc:ProductImage zoom="on" />
-                    </section><!-- product-box END -->
+                    <section class="product-box ProductImage col-xs-12 col-md-7">
+                        <!-- Mounting With API -->
+                        <ul class="thumbnails"></ul>
+                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+                            <div class="cursor-box"></div>    
+                        </div>
+                        <!-- Mounting With API -->
+                    </section>
 
                     <section class="buy-box col-xs-12 col-md-5">
                         <vtex.cmc:productName />
+                        
+                        <!--Estrelas abaixo do nome Yourviews-->
+                        <div id="yv-review-quickreview"></div>
+                        <!-- fim -Estrelas abaixo do nome Yourviews-->
+                        
                         <div class="choose-skus">
                             <div class="formatura-anel">
                                 <h3>Cursos: </h3>
@@ -274,6 +284,18 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!--Review e QA Yourviews-->
+                    <div class="container">
+                    	<div class="yv-box">
+                    		<div id="yv-reviews"></div>
+                    	</div>
+                    	<div class="yv-box">
+                    		<div class="yv-qa"></div>
+                    	</div>
+                    </div>
+                    <!-- Fim - Review e QA Yourviews-->
+                    
                 </section>
             </div>
         </main>
@@ -324,14 +346,6 @@
             </div>
         </div><!-- modal END -->
 
-        <vtex:template id="BT-commonScripts" />
-        <script type="text/javascript" src="/arquivos/product-v15.js"></script>
-        <script type="text/javascript" src="/arquivos/compra-persistente-v2.js"></script>
-        <script type="text/javascript" src="/arquivos/slick.js"></script>
-        <script type="text/javascript" src="/arquivos/desconto-boleto-v2.js"></script>
-        <script type="text/javascript" src="/arquivos/VideoApi.js"></script>
-        <script type="text/javascript" src="/arquivos/percent-price-shelf-v14.js"></script>
-
         <script type="text/javascript">
             $(document).ready(function(){
                 
@@ -355,9 +369,39 @@
                         $('body').removeClass('modal_active');
                     });
                 // Close Modal //
-            // Scripts Modal //
+                
+                //desconto 25% dia das mulheres    
+                    $(".product-view .flag").each(function(){ 
+                        if($(this).text().indexOf("25") !== -1){ 
+                            var text = $(".mini-tipbar ul li span:first").text()
+                            $(".mini-tipbar ul li span:first").text(text.replace("20%","25%"))
+                        } 
+                    });
+                
+                //cursor no zoom
+                    // $(document).bind('mousemove', function(e){
+                    //     $('.cursor-box').css({
+                    //         top: e.pageY
+                    //         left:  e.pageX,
+                    //     });
+                    // });
+                    
             });
         </script>
 
+        <!-- DECLARAR O EASYZOOM ANTES DO COMMONSCRIPTS -->
+        <script type="text/javascript" src="/arquivos/easyzoom.js"></script>
+        <script type="text/javascript" src="/arquivos/zoom-product-api-v4.js"></script>        
+        <!-- DECLARAR O EASYZOOM ANTES DO COMMONSCRIPTS -->
+
+        <vtex:template id="BT-commonScripts" />
+        <script type="text/javascript" src="/arquivos/product-v15.js"></script>
+        <script type="text/javascript" src="/arquivos/compra-persistente-v3.js"></script>
+        <script type="text/javascript" src="/arquivos/slick.js"></script>
+        <!-- <script type="text/javascript" src="/arquivos/desconto-boleto-v3.js"></script> -->
+        <script src="/arquivos/percent-price-shelf-v17.js"></script>
+        <script type="text/javascript" src="/arquivos/VideoApi.js"></script>
+        
+        <!--<script type="text/javascript" src="/arquivos/buy-box.js"></script>-->
     </body>
 </html>

@@ -28,9 +28,14 @@
                   <div class="product-name-mob col-xs-12 hidden-md hidden-lg hidden-sm"  >
                     <vtex.cmc:productName />
                   </div>
-                    <section class="product-box col-xs-12 col-md-7">
-                        <vtex.cmc:ProductImage zoom="on" />
-                    </section><!-- product-box END -->
+                    <section class="product-box ProductImage col-xs-12 col-md-7">
+                        <!-- Mounting With API -->
+                        <ul class="thumbnails"></ul>
+                        <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails">
+                            <div class="cursor-box"></div>    
+                        </div>
+                        <!-- Mounting With API -->
+                    </section>
 
                     <section class="buy-box col-xs-12 col-md-5">
                         <vtex.cmc:productName />
@@ -258,13 +263,13 @@
 
                         <vtex.cmc:BuyButton/>
                         <vtex.cmc:shippingValue/>
-                        <div class="aviso" style="display: block; margin-top: 10px; font-size: 12px; line-height: 16px;background-color: #fafafa; padding: 20px">
+                        <!-- <div class="aviso" style="display: block; margin-top: 10px; font-size: 12px; line-height: 16px;background-color: #fafafa; padding: 20px">
                             <strong style="display: block">AVISO</strong>
                             Informamos que devido às paralisações ocorridas nas estradas do país, 
                             os pedidos realizados em nosso site com envio pelos Correios estão sendo 
                             entregues com atraso. Tão logo se normalize essa situação, os prazos serão 
                             novamente respeitados.
-                        </div>
+                        </div> -->
                     </section><!-- buy-box END -->
                 </section><!-- product-view END -->
 
@@ -352,6 +357,11 @@
                 </article>
             </div>
         </div><!-- modal END -->
+
+        <!-- DECLARAR O EASYZOOM ANTES DO COMMONSCRIPTS -->
+        <script type="text/javascript" src="/arquivos/easyzoom.js"></script>
+        <script type="text/javascript" src="/arquivos/zoom-product-api-v4.js"></script>        
+        <!-- DECLARAR O EASYZOOM ANTES DO COMMONSCRIPTS -->
 
         <vtex:template id="BT-commonScripts" />
         <script type="text/javascript" src="/arquivos/product-v15.js"></script>

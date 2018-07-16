@@ -526,6 +526,13 @@ body.busca-vazia{
                 }
             }
         }
+
+        .yv-selo-prod,
+        #calculoFrete,
+        #yv-review-quickreview{
+            display: none !important;
+        }
+
         .bt-modal-aro{
             @extend .pt-sans-font;
             @include mq($screen-md) {

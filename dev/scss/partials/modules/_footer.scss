@@ -195,11 +195,16 @@ footer {
 	    			ul{
 	    				li{
 							display: inline-block;
-							vertical-align: top;
-							width: 50%;
-							img{
-								width: 80%;
-								height: auto;
+							vertical-align: middle;
+							width: 33%;
+
+							// img{
+							// 	width: 80%;
+							// 	height: auto;
+							// }
+
+							&:nth-child(3){
+								display: none;
 							}
 	    				}
 	    			}
@@ -289,7 +294,7 @@ footer {
 
 	    			li{
 	    				display: inline-block;
-	    				margin: 0 10px;
+	    				margin: 0 5px;
 
 	    				svg{
 	    					@extend .transition;
