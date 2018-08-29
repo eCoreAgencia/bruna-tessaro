@@ -375,6 +375,40 @@
 
         <script type="text/javascript">
             $(document).ready(function(){
+
+                if($('td.buy')[0]){
+                    numeral.register('locale', 'pt-br', {
+                        delimiters: {
+                            thousands: '.',
+                            decimal: ','
+                        },
+                        abbreviations: {
+                            thousand: 'mil',
+                            million: 'milhões',
+                            billion: 'b',
+                            trillion: 't'
+                        },
+                        ordinal: function (number) {
+                            return 'º';
+                        },
+                        currency: {
+                            symbol: 'R$'
+                        }
+                    });
+                    numeral.locale('pt-br');
+                    const regex = /Valor total:.*/gmi;
+                    const str = $('td.buy').html();
+                    let m = str.match(regex);
+                    m = parseFloat(m[0].replace('Valor total:  R$ ', '').replace('.', '').replace(",", "."));
+                    let price = parseFloat(m) * 0.8;
+                    price = numeral(price).format('$0,0.00');
+
+                    price = '<span class="price-cash">'+ price +' à vista</span>';
+
+                    $(price).insertBefore('td.buy .comprar-junto');
+                    console.log(price);
+
+                }
                 
             // Scripts Modal //
                 // Open Modal //
