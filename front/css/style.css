@@ -3827,8 +3827,7 @@ body.nossas-lojas .nossas-lojas ul li p {
 .slider .col-xs-12,
 .slider body.account .profile-detail-display,
 body.account .slider .profile-detail-display,
-.slider
-  body.account .address-display-block,
+.slider body.account .address-display-block,
 body.account .slider .address-display-block {
 	padding-right: 0;
 }
@@ -4473,8 +4472,7 @@ body.account .modal-body .control-group input:not([type="radio"]) {
 .slider .col-xs-12,
 .slider body.account .profile-detail-display,
 body.account .slider .profile-detail-display,
-.slider
-      body.account .address-display-block,
+.slider body.account .address-display-block,
 body.account .slider .address-display-block {
 	padding-right: 7px;
 }
